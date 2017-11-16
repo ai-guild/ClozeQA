@@ -122,7 +122,7 @@ class AttentionSumReader(NeuralNetwork):
         # sum up attention values of candidates
         attention_sum = tf.reduce_sum(
                 tf.expand_dims(attention, axis=-1)* candidate_mask,
-                axis=-1)
+                axis=1)
 
         # probabilities
         self._probs = tf.nn.softmax(attention_sum)
