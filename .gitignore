@@ -1,0 +1,13 @@
+.*swp
+*~
+*.pyc
+__pycache__/
+*.ipynb
+*.txt
+*.log
+log/
+*.bin
+datasets/
+.cache/
+*.pkl
+env/
