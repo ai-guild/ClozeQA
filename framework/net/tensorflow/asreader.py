@@ -45,7 +45,7 @@ class AttentionSumReader(NeuralNetwork):
         query_lens  = tf.count_nonzero(self._query,   axis=1)
 
         # mask to compensate for padding <pad>
-        padmask = tf.cast(self._context > 0, tf.float32)
+        #padmask = tf.cast(self._context > 0, tf.float32)
 
         #  Word Embedding
         #   - initialized with Glove
@@ -132,7 +132,7 @@ class AttentionSumReader(NeuralNetwork):
 
         # cross entropy
         ce = tf.nn.sparse_softmax_cross_entropy_with_logits(
-                logits=attention * padmask, 
+                logits=attention_sum,
                 labels=self._answer)
 
         # loss

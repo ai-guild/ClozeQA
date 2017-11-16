@@ -17,10 +17,10 @@ def exp1():
     # create word2vec model
     w2v = Word2Vocab(dim=200)
 
-    trainfeed = DataFeed(op1, batch_size=3, 
-            datapoints=dataset.trainset[:10], w2v=w2v)
-    testfeed  = DataFeed(op1, batch_size=1,
-            datapoints=dataset.testset[:10], w2v=w2v)
+    trainfeed = DataFeed(op1, batch_size=64, 
+            datapoints=dataset.trainset, w2v=w2v)
+    testfeed  = DataFeed(op1, batch_size=32,
+            datapoints=dataset.testset, w2v=w2v)
 
     # instantiate model
     asreader = AttentionSumReader(hdim=200, emb_dim=200,
